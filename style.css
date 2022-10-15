@@ -1,0 +1,110 @@
+img {
+  max-width: 100%;
+  display: block;
+}
+
+div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+h1 {
+  grid-column: 1 / -1;
+}
+
+/*A @media gera um bloco de código que só será ativado caso a condição entre parênteses seja verdadeira.*/
+
+@media (max-width: 600px) {
+  /*esse conteúdo só é aplicado quando for abaixo de 600px*/
+  div {
+    grid-template-columns: 1fr;
+  }
+  h1 {
+    background: lightpink;
+  }
+}
+
+/* acima de 1000px */
+@media (min-width: 1000px) {
+  html {
+    font-size: 150%;
+  }
+}
+
+/* entre 800px e 900px */
+@media (min-width: 800px) and (max-width: 900px) {
+  h1 {
+    background: lightgreen;
+  }
+}
+
+/*@media
+O repeat com auto-fit irá gerar o total de colunas que forem necessárias para preencher a área. Ex: grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))--> ter no mínimo 300px, mas se der espaço p/ crescer um pouco mais, colocar 1fr*/
+
+/*.galeria {
+  grid-template-columns: repeat(auto-fit, 150px);
+}
+--> a cada 150px que a tela cresce coloca uma imagem. Criamos uma div e colocamos várias imagens para uma galeria.*/
+
+/*Order: É possível mudar a ordem visual dos elementos na tela. Importante a ordem semântica (leitura da tela), não é afetada pelo order.
+@media (min-width: 300px) {
+  div img {
+    order: 2;
+  }
+}
+*/
+
+/*Object Fit: Preenche o elemento pai com a imagem, sem distorcer a mesma. Funciona como o background-size. Contém valores como cover, contain, fill. Object-position: posiciona o objeto, indicando como ele deve ser cortado. top left, top center
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cover img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top center; (corta a img a do topo para o centro)
+}
+
+.texto {
+  align-self: center;
+}
+
+p {
+  font-size: 2rem;
+}
+*/
+
+/*max-width 
+img {
+  max-width: 100%;
+  display: block;
+} 
+*/
+/*.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto; (sempre alinha ao centro independente do tamanho da tela*)
+}
+.cover img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+.texto {
+  align-self: center;
+}
+
+.texto p {
+  max-width: 60ch;
+}
+*/
